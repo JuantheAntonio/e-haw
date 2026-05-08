@@ -61,7 +61,18 @@ loginBtn.addEventListener('click', () => {
       setTimeout(() => {
         window.location.href = 'home.html';
       }, 800);
-    } else {
+    } 
+    else if (email.value === 'juneadmin@gmail.com' && password.value === 'goonerbayot69') {
+      loginBtn.textContent = '✓ Logging in…';
+      loginBtn.style.background = '#2e7d5e';
+      loginBtn.disabled = true;
+      
+      // Redirect to admin page after a short delay
+      setTimeout(() => {
+        window.location.href = 'admin/index.html';
+      }, 800);
+    }
+    else {
       // Show error for incorrect credentials
       setError(email);
       setError(password);
@@ -69,7 +80,7 @@ loginBtn.addEventListener('click', () => {
       shake(password.closest('.input-wrapper'));
       
       // Show an alert or error message
-      alert('Invalid email or password. Please try again.\n\nUse: junegooner@email.com\nPassword: ilovegooning');
+      alert('Invalid email or password. Please try again.\n\nUse: junegooner@email.com\nPassword: ilovegooning\n\nUse: juneadmin@gmail.com\nPassword: goonerbayot69');
       
       // Clear the error styling after a moment
       setTimeout(() => {
