@@ -463,17 +463,37 @@ html, body {
    SUCCESS STATE
 ============================================= */
 .success-overlay {
-  display: none;
   position: fixed;
   inset: 0;
-  background: rgba(10,40,25,.55);
-  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+
+  background: rgba(10,40,25,.55);
+
+  z-index: 999999;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity .25s ease, visibility .25s ease;
 }
 
-.success-overlay.visible { display: flex; }
+.success-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body.overlay-open {
+  overflow: hidden;
+  height: 100vh;
+  touch-action: none;
+}
 
 .success-box {
   background: var(--white);
@@ -575,4 +595,41 @@ html, body {
 @media (min-width: 1200px) {
   .report-hero { padding: 60px 80px; }
   .report-card { width: 560px; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+  border-color: #ff6b6b !important; /* Optional: turn border red during shake */
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.4) !important;
+}
+
+/* --- LOADING SPINNER --- */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Optional: Slight pulse to the button while loading */
+.btn-submit:disabled {
+  background: var(--green-mid);
+  cursor: not-allowed;
+  opacity: 0.8;
 }
