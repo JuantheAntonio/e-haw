@@ -27,7 +27,7 @@ const modalProfileImg = document.getElementById('modalProfileImg');
  */
 async function fetchReports() {
   try {
-    const response = await fetch('http://localhost:3000/api/reports');
+    const response = await fetch('https://e-haw.onrender.com/api/reports');
     if (!response.ok) throw new Error('Failed to fetch reports');
     
     allReports = await response.json();
@@ -238,7 +238,7 @@ function openReportModal(index) {
  */
 async function updateReportStatus(id, updates) {
   try {
-    const response = await fetch(`http://localhost:3000/api/reports/${id}`, {
+    const response = await fetch(`https://e-haw.onrender.com/api/reports/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updates)
