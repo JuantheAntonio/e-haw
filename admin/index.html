@@ -38,7 +38,7 @@
       </a>
 
       <!-- Accounts (active) -->
-      <a href="accounts.html" class="sidebar__nav-item active" aria-label="Accounts" title="Accounts">
+      <a href="accounts.html" class="sidebar__nav-item" aria-label="Accounts" title="Accounts">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="8" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
           <path d="M2 21C2 17.134 4.686 14 8 14H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -115,35 +115,40 @@
           <div class="stats-grid">
             <div class="stat-box">
               <div class="stat-box__label">Total<br>Reports</div>
-              <div class="stat-box__value" data-stat="total">67</div>
+              <div class="stat-box__value" data-stat="total">0</div>
             </div>
             <div class="stat-box">
               <div class="stat-box__label">This Day</div>
-              <div class="stat-box__value" data-stat="day">67</div>
+              <div class="stat-box__value" data-stat="day">0</div>
             </div>
             <div class="stat-box">
               <div class="stat-box__label">This Week</div>
-              <div class="stat-box__value" data-stat="week">67</div>
+              <div class="stat-box__value" data-stat="week">0</div>
             </div>
             <div class="stat-box">
               <div class="stat-box__label">This Month</div>
-              <div class="stat-box__value" data-stat="month">67</div>
+              <div class="stat-box__value" data-stat="month">0</div>
             </div>
             <div class="stat-box">
               <div class="stat-box__label">Pending</div>
-              <div class="stat-box__value" data-stat="pending">67</div>
+              <div class="stat-box__value" data-stat="pending">0</div>
             </div>
             <div class="stat-box">
               <div class="stat-box__label">Unresolved</div>
-              <div class="stat-box__value" data-stat="unresolved">67</div>
+              <div class="stat-box__value" data-stat="unresolved">0</div>
             </div>
             <div class="stat-box">
               <div class="stat-box__label">Resolved</div>
-              <div class="stat-box__value" data-stat="resolved">67</div>
+              <div class="stat-box__value" data-stat="resolved">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-box__label">Awaiting<br>Acceptance</div>
+              <div class="stat-box__value" data-stat="awaiting">0</div>
             </div>
           </div>
         </div>
       </section>
+
 
       <!-- Summary Section -->
       <section class="section" aria-labelledby="summary-heading">
@@ -171,7 +176,7 @@
                 <th scope="col">Report Number</th>
                 <th scope="col">Date</th>
                 <th scope="col">Status</th>
-                <th scope="col">Description</th>
+                <th scope="col">Category</th>
               </tr>
             </thead>
             <tbody id="summaryTableBody">
