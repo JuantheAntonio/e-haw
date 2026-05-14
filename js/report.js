@@ -188,7 +188,7 @@ submitBtn.addEventListener('click', async (e) => {
 
   // Inside submitBtn listener in report.js
   try {
-    const response = await fetch('https://e-haw.onrender.com/api/reports');
+    const response = await fetch('http://localhost:3000/api/reports', {
       method: 'POST',
       body: formData
     });
