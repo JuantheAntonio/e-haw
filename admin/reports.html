@@ -9,25 +9,18 @@
 </head>
 <body>
 
-  <!-- ═══════════════ SIDEBAR ═══════════════ -->
   <aside class="sidebar" role="navigation" aria-label="Main Navigation">
-
-    <!-- Logo -->
     <div class="sidebar__logo" title="E-HAW Panel Home">
-    <img src="images/7.png" alt="E-HAW Logo" class="logo-icon" />
+      <img src="images/7.png" alt="E-HAW Logo" class="logo-icon" />
     </div>
 
-    <!-- Nav -->
     <nav class="sidebar__nav">
-
-      <!-- Home -->
       <a href="index.html" class="sidebar__nav-item" aria-label="Home" title="Home">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M3 12L12 3L21 12V21H15V15H9V21H3V12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none"/>
         </svg>
       </a>
 
-      <!-- Reports (active) -->
       <a href="reports.html" class="sidebar__nav-item active" aria-label="Reports" title="Reports">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="4" y="3" width="12" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
@@ -37,8 +30,7 @@
         </svg>
       </a>
 
-      <!-- Accounts (active) -->
-      <a href="accounts.html" class="sidebar__nav-item active" aria-label="Accounts" title="Accounts">
+      <a href="accounts.html" class="sidebar__nav-item" aria-label="Accounts" title="Accounts">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="8" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
           <path d="M2 21C2 17.134 4.686 14 8 14H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -47,7 +39,6 @@
       </a>
     </nav>
 
-    <!-- Logout -->
     <div class="sidebar__footer">
       <button class="sidebar__nav-item sidebar__logout" aria-label="Logout" title="Logout" id="sidebarLogout">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -59,56 +50,40 @@
     </div>
   </aside>
 
-  <!-- ═══════════════ MAIN WRAPPER ═══════════════ -->
   <div class="main-wrapper">
-
-    <!-- Background -->
     <div class="bg-overlay" aria-hidden="true"></div>
 
-    <!-- TOP NAVBAR -->
     <header class="topbar" role="banner">
-      <a href="index.html" class="topbar__brand" aria-label="Go to E-HAW homepage">
+      <a href="index.html" class="topbar__brand">
         <span class="topbar__brand-text">E-HAW PANEL</span>
       </a>
 
-      <div class="topbar__user" id="userMenu" role="button" tabindex="0"
-           aria-haspopup="true" aria-expanded="false" aria-label="User menu">
-        <span class="topbar__username">Hi! <strong>JuneGooner67</strong></span>
-        <div class="topbar__avatar" aria-hidden="true">
+      <div class="topbar__user" id="userMenu" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+        <span class="topbar__username">Hi! <strong>Admin</strong></span>
+        <div class="topbar__avatar">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
             <path d="M4 20C4 16.686 7.582 14 12 14C16.418 14 20 16.686 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-
-        <!-- Dropdown -->
-        <div class="topbar__dropdown" id="userDropdown" role="menu" aria-label="User options">
-          <button class="topbar__dropdown-item" role="menuitem" tabindex="-1" id="logoutBtn">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M9 21H5C4.47 21 3.96 20.79 3.59 20.41C3.21 20.04 3 19.53 3 19V5C3 4.47 3.21 3.96 3.59 3.59C3.96 3.21 4.47 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <polyline points="16 17 21 12 16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            Logout
-          </button>
+        <div class="topbar__dropdown" id="userDropdown">
+          <button class="topbar__dropdown-item" id="logoutBtn">Logout</button>
         </div>
       </div>
     </header>
 
-    <!-- CONTENT -->
     <main class="content" role="main">
 
-      <!-- Report List Section -->
       <section class="section" aria-labelledby="reports-heading">
         <div class="section__header">
           <h2 class="section__title" id="reports-heading">
             Report List
-            <svg class="section__title-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                 aria-hidden="true" style="width:18px;height:18px;color:var(--text-muted)">
+            <svg class="section__title-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:18px;height:18px;color:var(--text-muted)">
               <path d="M3 6H21M3 12H15M3 18H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               <path d="M17 9l4 3-4 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </h2>
+
           <button class="section__action-btn" title="Export" aria-label="Export reports">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -118,20 +93,29 @@
           </button>
         </div>
 
-        <!-- TABLE CARD -->
         <div class="table-card" role="region" aria-label="Report Table">
+          <div class="filter-wrapper" style="display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--table-border);">
+            <label for="validityFilter" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Filter:</label>
+            <select id="validityFilter" class="validity-select" style="background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; cursor: pointer; outline: none; transition: border 0.2s ease;">
+              <option value="all">All Records</option>
+              <option value="Awaiting Review">Awaiting Review</option>
+              <option value="Valid">Valid</option>
+              <option value="Invalid">Invalid</option>
+            </select>
+          </div>
+
           <table class="report-table" aria-label="List of reports">
             <thead>
               <tr>
                 <th scope="col">Report Number</th>
                 <th scope="col">Date</th>
-                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+                <th scope="col">Validity</th>
                 <th scope="col">Status</th>
+                <th scope="col" style="text-align: right;">Action</th>
               </tr>
             </thead>
-            <tbody id="reportTableBody">
-              <!-- Populated by JS -->
-            </tbody>
+            <tbody id="reportTableBody"></tbody> 
           </table>
         </div>
       </section>
@@ -139,50 +123,43 @@
     </main>
   </div>
 
-  <!-- ═══════════════ MODAL ═══════════════ -->
   <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true"
-       aria-labelledby="modalTitle" aria-hidden="true">
+        aria-labelledby="modalReportId" aria-hidden="true">
     <div class="modal" id="reportModal">
       <button class="modal-close" id="modalClose" aria-label="Close modal">&#10005;</button>
 
       <div class="modal-header-bar">
-        <span class="modal-report-id" id="modalReportId">2026-000001</span>
-        <span class="modal-date" id="modalDate">June 7, 2067</span>
+        <span class="modal-report-id" id="modalReportId">ID</span>
         <span class="modal-divider">|</span>
-        <span class="modal-section-label">Description</span>
+        <span class="modal-date" id="modalDate">Date</span>
+        <span class="modal-section-label" style="margin-right: 30px;">Incident Details</span>
       </div>
 
       <div class="modal-body">
-        <!-- LEFT -->
         <div class="modal-left">
           <div class="modal-profile-img-wrap">
-            <img src="images/default-profile.png" alt="Reporter profile photo"
-                 class="modal-profile-img" id="modalProfileImg"
-                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%23153d25\'/%3E%3Ctext x=\'50\' y=\'60\' font-size=\'40\' text-anchor=\'middle\' fill=\'%235dd98a\'%3E%3F%3C/text%3E%3C/svg%3E'"/>
+            <img src="" alt="Incident photo" class="modal-profile-img" id="modalProfileImg" />
           </div>
           <div class="modal-info">
             <p class="modal-info-label">Name</p>
-            <p class="modal-info-value" id="modalName">Jerry Edward Christian X. Abadia</p>
-            <p class="modal-info-label">Contact / Email</p>
-            <p class="modal-info-value" id="modalContact">junegooner67@gmail.com</p>
+            <p class="modal-info-value" id="modalName">Anonymous Resident</p>
           </div>
         </div>
 
-        <!-- RIGHT -->
         <div class="modal-right">
           <div class="modal-description-box" id="modalDescription"
-               role="region" aria-label="Report description" tabindex="0">
-            <!-- Description injected by JS -->
-          </div>
+                role="region" aria-label="Report description" tabindex="0">
+            </div>
         </div>
       </div>
 
-      <!-- FOOTER -->
-      <div class="modal-footer">
-        <button class="modal-btn accept-btn" id="acceptBtn">Accept</button>
-        <button class="modal-btn decline-btn" id="declineBtn">Decline</button>
-      </div>
+      <div class="modal-footer" id="modalFooter">
+        </div>
     </div>
+  </div>
+  <div class="image-lightbox" id="imageLightbox" role="dialog">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img src="" id="lightboxImg" alt="Enlarged evidence" />
   </div>
 
   <script src="js/reports.js"></script>
