@@ -17,14 +17,14 @@
 async function loadDashboardData() {
   try {
     // 1. Fetch live stats for the 7 grid boxes
-    const statsRes = await fetch('http://localhost:3000/api/stats');
+    const statsRes = await fetch('https://e-haw.onrender.com/api/stats');
     if (!statsRes.ok) throw new Error('Stats fetch failed');
     const stats = await statsRes.json();
     
     updateStatBoxes(stats);
 
     // 2. Fetch live reports for the summary table
-    const reportsRes = await fetch('http://localhost:3000/api/reports');
+    const reportsRes = await fetch('https://e-haw.onrender.com/api/reports');
     if (!reportsRes.ok) throw new Error('Reports fetch failed');
     const reports = await reportsRes.json();
     
