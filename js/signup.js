@@ -46,31 +46,47 @@ signupBtn.addEventListener('click', async () => {
   let valid = true;
 
   if (!username.value.trim()) {
-    setError(username, 'Username is required'); shake(username.closest('.input-wrapper')); valid = false;
-  }
-  if (!email.value.includes('@')) {
-    setError(email, 'Enter a valid email'); shake(email.closest('.input-wrapper')); valid = false;
-  }
-  if (password.value.length < 6) {
-    setError(password, 'Password must be at least 6 characters'); shake(password.closest('.input-wrapper')); valid = false;
-  }
-  if (confirmPw.value !== password.value) {
-    setError(confirmPw, 'Passwords do not match'); shake(confirmPw.closest('.input-wrapper')); valid = false;
+    valid = false;
   }
 
-  const { data, error } = await supabase
-      .from('users')
-      .insert([
-        {
-          username: username.value,
-          email: email.value,
-          password: password.value
-        }
-      ])
+  if (!email.value.includes('@')) {
+    valid = false;
+  }
+
+  if (password.value.length < 6) {
+    valid = false;
+  }
+
+  if (confirmPw.value !== password.value) {
+    valid = false;
+  }
+
+  if (!valid) return;
+
+  const { data, error } = await supabase.auth.signUp({
+    email: email.value,
+    password: password.value
+  })
 
   if (error) {
-      console.log(error)
-      return
+    console.log(error.message)
+    return
+  }
+
+  const user = data.user
+
+  const { error: profileError } = await supabase
+    .from('users')
+    .insert([
+      {
+        id: user.id,
+        username: username.value
+      }
+    ])
+
+  if (profileError) {
+    console.log(profileError.message)
+    return
   }
 
   if (valid) {
