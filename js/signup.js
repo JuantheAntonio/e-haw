@@ -2,6 +2,8 @@
 /* =============================================
    JAVASCRIPT — Form Validation & Interactions
 ============================================= */
+import { supabase } from './supabase/erm.js'
+
 const signupBtn = document.getElementById('signupBtn');
 const username  = document.getElementById('username');
 const email     = document.getElementById('email');
@@ -40,7 +42,7 @@ function clearError(input) {
   inp.addEventListener('input', () => clearError(inp));
 });
 
-signupBtn.addEventListener('click', () => {
+signupBtn.addEventListener('click', async () => {
   let valid = true;
 
   if (!username.value.trim()) {
@@ -54,6 +56,21 @@ signupBtn.addEventListener('click', () => {
   }
   if (confirmPw.value !== password.value) {
     setError(confirmPw, 'Passwords do not match'); shake(confirmPw.closest('.input-wrapper')); valid = false;
+  }
+
+  const { data, error } = await supabase
+      .from('users')
+      .insert([
+        {
+          username: username.value,
+          email: email.value,
+          password: password.value
+        }
+      ])
+
+  if (error) {
+      console.log(error)
+      return
   }
 
   if (valid) {
